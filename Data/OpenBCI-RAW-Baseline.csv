@@ -1,7 +1,3 @@
-%OpenBCI Raw EEG Data
-%Number of channels = 4
-%Sample Rate = 200 Hz
-%Board = OpenBCI_GUI$BoardGanglionBLE
 Sample Index, EXG Channel 0, EXG Channel 1, EXG Channel 2, EXG Channel 3, Accel Channel 0, Accel Channel 1, Accel Channel 2, Other, Other, Other, Other, Other, Timestamp, Other, Timestamp (Formatted)
 0.0, 533.2592450319789, 671.2035849476233, -2296.8445981871337, -940.8017530534416, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.677029458077073E9, 0.0, 2023-02-21 19:30:58.077
 1.0, 750.5642620073631, 625.2888331916183, -2286.567353108898, -1117.4503176105209, 0.0, -0.09600000455975533, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.67702945810108E9, 0.0, 2023-02-21 19:30:58.101

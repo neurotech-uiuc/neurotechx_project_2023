@@ -19,6 +19,8 @@ import matplotlib.pyplot as plt
 #     print(f'Processed {line_count} lines.') 
 
 # Load EEG signal and base pattern
+
+
 eeg_signal = np.load('Data/ Prithvi-LE.txt')
 base_pattern = np.load('Data/OpenBCI-RAW-Baseline.txt')
 
