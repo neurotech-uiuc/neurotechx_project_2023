@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix
+import matplotlib.pyplot as plt
 # TODO: Create model to classifiy EEG motor actions
 
 # Printing out data just to see if the import worked
@@ -16,6 +17,27 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 #         print(row)
 #         line_count += 1
 #     print(f'Processed {line_count} lines.') 
+
+# Load EEG signal and base pattern
+eeg_signal = np.load('Data/ Prithvi-LE.txt')
+base_pattern = np.load('Data/OpenBCI-RAW-Baseline.txt')
+
+# Define time window for base pattern
+# This is the toughest part to algorithmically set. Might have to use multiple batches of filtering 
+# but this is a template so far 
+window_start = 1000
+window_end = 1500
+base_pattern = base_pattern[window_start:window_end]
+
+# Subtract base pattern from EEG signal
+filtered_signal = eeg_signal - np.tile(base_pattern, int(len(eeg_signal)/len(base_pattern))+1)[:len(eeg_signal)]
+
+# Plot original and filtered signals
+plt.plot(eeg_signal, label='Original')
+plt.plot(filtered_signal, label='Filtered')
+plt.legend()
+plt.show()
+
 
 # Template code for the Random Forest Classifier algorithm using the dataset
 dataLE = pd.read_csv('Data/ Prithvi-LE.txt')
@@ -46,3 +68,5 @@ conf_matrix = confusion_matrix(y_test, y_pred)
 print('Accuracy:', accuracy)
 print('Confusion matrix:')
 print(conf_matrix)
+
+
