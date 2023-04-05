@@ -26,7 +26,7 @@ for i in range(60+5):
         print("BLINK")
 
     else:
-        print("close eyes")
+        print("keep eyes open")
 
     print()
     # print(str(arr[i]) + " " + str(arr[i+1]) + " " + str(arr[i+2]) + " " + str(arr[i+3]) + " " + str(arr[i+4]))
